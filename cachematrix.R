@@ -1,8 +1,8 @@
 ## Put comments here that give an overall description of what your
 ## functions do
-
+## 2 functions - makeCacheMatrix and cacheSolve. 
 ## Write a short comment describing this function
-
+##makeCacheMatrix is the function that caches the matrix and its inverse 
 makeCacheMatrix <- function(x = matrix()) {
 inverse<-NULL
  set<-function(y) {
@@ -15,7 +15,8 @@ inverse<-NULL
 
 
 ## Write a short comment describing this function
-
+##cacheSolve is the function that retrieves the inverse of the given matrix if already cached. If not, it computes the inverse
+## and caches the result while returning the inverse as output. 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
 inverse<-x$getInv()
@@ -28,3 +29,8 @@ inverse<- solve(matrix(data,nrow=len))
 x$setInv(inverse)
 inverse }
 }
+
+##example for execution: 
+## a<-makeCacheMatrix(c(3,2,0,0,0,1,2,-2,1))
+## cacheSolve(a)
+## cacheSolve(a) ##executing this again will display the message "Retrieving data from Cache" 
